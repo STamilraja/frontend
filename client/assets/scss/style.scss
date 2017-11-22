@@ -136,44 +136,8 @@ button.active, button:hover{
 .text-right{
 	text-align: right;
 }
-#header-sec{
-    background-color: $menu-background;
-    height:60px;
-    border-bottom: 2px solid #DDD;
-    /* The navigation styling: */
-    header{
-        margin: auto 40px;
-        nav{
-        	position:absolute;
-        	right:40px;
-        	top:0.75em;
 
-          ul li{
-          	display:inline;
-            a, a:visited{
-            	color:$menu-color;
-              font-weight: bold;
-            	display:block;
-            	float:left;
-            	margin:5px;
-            	padding:10px 5px;
-            	text-transform:uppercase;
-            }
-            a:hover, .active{
-            	text-decoration:none;
-            	color:$menu-hover-color;
-            }
-          }
-          ul li:last-child{
-            a, a:visited{
-              margin:5px 0px 5px 5px;
-              padding:10px 0px 5px 10px;
-            }
-          }
-        }
-    }
-}
-#breadcrumb-sec{
+.breadcrumb-sec{
   padding: 20px 40px;
   .breadcrumb{
     li {
@@ -202,7 +166,7 @@ button.active, button:hover{
 }
 /* Article styles: */
 
-#articles-sec{
+.articles-sec{
 	position:relative;
   article{
     margin: 20px 40px;
@@ -263,7 +227,7 @@ button.active, button:hover{
     }
 }
 
-#content-sec{
+.content-sec{
 	position: relative;
 	margin: 20px 40px;
 	display: flex;
@@ -319,25 +283,4 @@ button.active, button:hover{
 	display: flex;
   flex-direction: row;
 	margin-top: 20px;
-}
-/* Footer styling: */
-
-footer{
-	padding:30px 40px;
-	background-color: $footer-background-color;
-  color: $white-color;
-  position:relative;
-  display: flex;
-  flex-direction: row;
-  h4{
-    text-transform: uppercase;
-  }
-  ul li{
-    list-style-type: none;
-    line-height: 25px;
-    a{
-      color: $white-color;
-      cursor: pointer;
-    }
-  }
 }

@@ -1,0 +1,20 @@
+/* Footer styling: */
+footer{
+	padding:30px 40px;
+	background-color: $footer-background-color;
+  color: $white-color;
+  position:relative;
+  display: flex;
+  flex-direction: row;
+  h4{
+    text-transform: uppercase;
+  }
+  ul li{
+    list-style-type: none;
+    line-height: 25px;
+    a{
+      color: $white-color;
+      cursor: pointer;
+    }
+  }
+}

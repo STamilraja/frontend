@@ -1,0 +1,37 @@
+.header-sec{
+    background-color: $menu-background;
+    height:60px;
+    border-bottom: 2px solid #DDD;
+    /* The navigation styling: */
+    header{
+        margin: auto 40px;
+        nav{
+        	position:absolute;
+        	right:40px;
+        	top:0.75em;
+
+          ul li{
+          	display:inline;
+            a, a:visited{
+            	color:$menu-color;
+              font-weight: bold;
+            	display:block;
+            	float:left;
+            	margin:5px;
+            	padding:10px 5px;
+            	text-transform:uppercase;
+            }
+            a:hover, .active{
+            	text-decoration:none;
+            	color:$menu-hover-color;
+            }
+          }
+          ul li:last-child{
+            a, a:visited{
+              margin:5px 0px 5px 5px;
+              padding:10px 0px 5px 10px;
+            }
+          }
+        }
+    }
+}

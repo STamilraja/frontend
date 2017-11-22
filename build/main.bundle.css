@@ -134,42 +134,14 @@ button.active, button:hover {
 .text-right {
   text-align: right; }
 
-#header-sec {
-  background-color: #FFF;
-  height: 60px;
-  border-bottom: 2px solid #DDD;
-  /* The navigation styling: */ }
-  #header-sec header {
-    margin: auto 40px; }
-    #header-sec header nav {
-      position: absolute;
-      right: 40px;
-      top: 0.75em; }
-      #header-sec header nav ul li {
-        display: inline; }
-        #header-sec header nav ul li a, #header-sec header nav ul li a:visited {
-          color: #24404C;
-          font-weight: bold;
-          display: block;
-          float: left;
-          margin: 5px;
-          padding: 10px 5px;
-          text-transform: uppercase; }
-        #header-sec header nav ul li a:hover, #header-sec header nav ul li .active {
-          text-decoration: none;
-          color: #3277FA; }
-      #header-sec header nav ul li:last-child a, #header-sec header nav ul li:last-child a:visited {
-        margin: 5px 0px 5px 5px;
-        padding: 10px 0px 5px 10px; }
-
-#breadcrumb-sec {
+.breadcrumb-sec {
   padding: 20px 40px; }
-  #breadcrumb-sec .breadcrumb li {
+  .breadcrumb-sec .breadcrumb li {
     position: relative;
     list-style-type: none; }
-    #breadcrumb-sec .breadcrumb li a {
+    .breadcrumb-sec .breadcrumb li a {
       padding-left: 20px; }
-  #breadcrumb-sec .breadcrumb li::before {
+  .breadcrumb-sec .breadcrumb li::before {
     position: absolute;
     content: "";
     top: 50%;
@@ -185,42 +157,42 @@ button.active, button:hover {
     border-right: 7px solid grey; }
 
 /* Article styles: */
-#articles-sec {
+.articles-sec {
   position: relative; }
-  #articles-sec article {
+  .articles-sec article {
     margin: 20px 40px;
     background-color: #FFF;
     padding: 40px;
     display: flex;
     flex-direction: row; }
-    #articles-sec article .profile {
+    .articles-sec article .profile {
       border-right: 1px solid #CCC;
       display: flex;
       flex-direction: row;
       margin: 20px; }
-      #articles-sec article .profile figure {
+      .articles-sec article .profile figure {
         float: left;
         overflow: hidden;
         border: 1px solid #CCC;
         border-radius: 90px;
         height: 180px; }
-        #articles-sec article .profile figure img {
+        .articles-sec article .profile figure img {
           width: 100%;
           height: 100%; }
-    #articles-sec article .profile-info {
+    .articles-sec article .profile-info {
       display: flex;
       flex-direction: row;
       margin: 20px; }
-      #articles-sec article .profile-info .card {
+      .articles-sec article .profile-info .card {
         width: 100%; }
-        #articles-sec article .profile-info .card .card-text {
+        .articles-sec article .profile-info .card .card-text {
           width: 100%;
           display: flex;
           flex-direction: row;
           line-height: 40px; }
-          #articles-sec article .profile-info .card .card-text div {
+          .articles-sec article .profile-info .card .card-text div {
             width: 50%; }
-            #articles-sec article .profile-info .card .card-text div label {
+            .articles-sec article .profile-info .card .card-text div label {
               font-size: 14px;
               font-weight: bold; }
 
@@ -232,16 +204,16 @@ button.active, button:hover {
   .card .card-text .highlighter {
     color: #3277FA; }
 
-#content-sec {
+.content-sec {
   position: relative;
   margin: 20px 40px;
   display: flex;
   flex-direction: row; }
-  #content-sec .content-card {
+  .content-sec .content-card {
     background-color: #FFF;
     padding: 30px;
     margin-top: 20px; }
-    #content-sec .content-card li {
+    .content-sec .content-card li {
       list-style-type: none;
       letter-spacing: 0.02em;
       line-height: 2em; }
@@ -281,6 +253,34 @@ button.active, button:hover {
   display: flex;
   flex-direction: row;
   margin-top: 20px; }
+
+.header-sec {
+  background-color: #FFF;
+  height: 60px;
+  border-bottom: 2px solid #DDD;
+  /* The navigation styling: */ }
+  .header-sec header {
+    margin: auto 40px; }
+    .header-sec header nav {
+      position: absolute;
+      right: 40px;
+      top: 0.75em; }
+      .header-sec header nav ul li {
+        display: inline; }
+        .header-sec header nav ul li a, .header-sec header nav ul li a:visited {
+          color: #24404C;
+          font-weight: bold;
+          display: block;
+          float: left;
+          margin: 5px;
+          padding: 10px 5px;
+          text-transform: uppercase; }
+        .header-sec header nav ul li a:hover, .header-sec header nav ul li .active {
+          text-decoration: none;
+          color: #3277FA; }
+      .header-sec header nav ul li:last-child a, .header-sec header nav ul li:last-child a:visited {
+        margin: 5px 0px 5px 5px;
+        padding: 10px 0px 5px 10px; }
 
 /* Footer styling: */
 footer {

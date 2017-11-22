@@ -1,0 +1,10 @@
+//Mixins
+@mixin font-family($font) {
+    font-family: $font, Helvetica, Arial, Geneva, sans-serif;
+}
+@mixin custom-btn($color, $border) {
+    background: #fff !important;
+    border-radius: 6px !important;
+    border: 1px solid $border !important;
+    color: $color !important;
+}

@@ -5,6 +5,11 @@
     /* The navigation styling: */
     header{
         margin: auto 40px;
+        hgroup{
+          img{
+            padding-top:13px;
+          }
+        }
         nav{
         	position:absolute;
         	right:40px;
@@ -20,11 +25,16 @@
             	margin:5px;
             	padding:10px 5px;
             	text-transform:uppercase;
+              &:hover{
+              	text-decoration:none;
+              	color:$menu-hover-color;
+              }
             }
-            a:hover, .active{
-            	text-decoration:none;
-            	color:$menu-hover-color;
+            .active{
+              text-decoration:none;
+              color:$menu-hover-color;
             }
+
           }
           ul li:last-child{
             a, a:visited{
@@ -33,5 +43,9 @@
             }
           }
         }
+    }
+    .clear {
+      zoom: 1;
+      display: block;
     }
 }

@@ -12,9 +12,19 @@ footer{
   ul li{
     list-style-type: none;
     line-height: 25px;
+    color: #7f8c8d;
     a{
-      color: $white-color;
+      color: #7f8c8d;
       cursor: pointer;
     }
   }
+	.social-icon{
+		color: #7f8c8d;
+		font-size: 22px;
+		ul li{
+			list-style-type: none;
+			float: left;
+			padding-right: 30px;
+		}
+	}
 }

@@ -20,7 +20,7 @@ module.exports = {
         },
         { // sass / scss loader for webpack
           test: /\.scss$/,
-          loaders: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
+          loaders: ExtractTextPlugin.extract(['css-loader', 'postcss-loader', 'sass-loader']),
           exclude:__dirname+'/node_modules'
           // options: {
           //   resources: [__dirname+'/client/assets/scss/*.scss']

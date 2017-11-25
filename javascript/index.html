@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+          <script>
+                  // Date Functionality
+                  document.write("<h3>Task 1:</h3>");
+                  document.write("question: <br>-----------<br>Display the current day and time in the following format<br>Sample Output : Today is : Friday. <br>Current time is : 4 PM : 50 : 22<br><br> Ans:<br>-----");
+                  var now = new Date();
+                  var week = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+                  document.write('<br> Today is : '+week[now.getDay()]);
+                  var hour = parseInt(now.getHours());
+                  document.write('<br> Current Time is : '+((hour > 12) ? (hour-12):hour)+''+((now.getHours() >= 12) ? " PM":" AM")+' : '+now.getMinutes()+' : '+now.getSeconds());
+
+                  // String Functionality
+                  document.write("<h3>Task 2:</h3>");
+                  document.write("question: <br>-----------<br>Remove a character at the specified position of a given string and return the new string. string : mozilla<br><br> Ans:<br>-----");
+                  var word = 'mozilla';
+                  document.write("<br>");
+                  document.write(word.replace(word[2],''));
+                  document.write("<br>");
+                  document.write(word.substr(0,2)+''+word.substr(3,word.length));
+
+                  // Vowels Findout (i)
+                  document.write("<h3>Task 3:</h3>");
+                  document.write("question: <br>-----------<br>function that accepts a string as a parameter and counts the number of vowels within the string Example string : 'The quick brown fox' Expected Output : 5<br><br> Ans:<br>-----");
+                  var parameter = 'The quick brown fox';
+                  var vowels = ['a','e','i','o','u'];
+                  var vow_count = 0;
+                  for(var i = 0; i < vowels.length; i++){
+                      var res_arr = parameter.split(vowels[i]);
+                      vow_count =  vow_count + parseInt(res_arr.length) - 1;
+                  }
+                  document.write('<br> Vowels Count is : '+vow_count);
+                  // (ii)
+                  var vow_count = 0;
+                  for(var i = 0; i < parameter.length; i++){
+                      var char = parameter[i];
+                      if(char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u'){
+                        vow_count++;
+                      }
+                  }
+                  document.write('<br> Vowels Count is : '+vow_count);
+
+                  // Unique Charactor Findout
+                  document.write("<h3>Task 4:</h3>");
+                  document.write("question: <br>-----------<br>function to extract unique characters from a string<br> Example string : 'thequickbrownfoxjumpsoverthelazydog' Expected Output : 'thequickbrownfxjmpsvlazydg'<br><br> Ans:<br>-----");
+                  var sample_string =  "thequickbrownfoxjumpsoverthelazydog";
+                  var result_string = "";
+                  for(var i = 0; i < sample_string.length; i++){
+                      var repeat_flag = 0;
+                      for(var j = 0; j < result_string.length; j++){
+                          if(sample_string[i] === result_string[j]){
+                              repeat_flag++;
+                          }
+                      }
+                      if(repeat_flag === 0){
+                        result_string+=sample_string[i];
+                      }
+                  }
+                  document.write('<br> Unique Charactor is : '+result_string);
+
+                  // Array Addition
+                  document.write("<h3>Task 5:</h3>");
+                  document.write("question: <br>-----------<br>Two arrays with individual values, write a JavaScript program to compute the sum of each individual index value from the given arrays Example: array1 = [1,0,2,3,4]; array2 = [3,5,6,7,8,13]; Expected Output : [4, 5, 8, 10, 12, 13]<br><br> Ans:<br>-----");
+
+                  // Way One
+                  var array1 = [1,0,2,3,4];
+                  var array2 = [3,5,6,7,8,13];
+                  var sum = array1.map(function (num, idx) {
+                    return num + array2[idx];
+                  });
+                  document.write("<br>");
+                  document.write(sum);
+                  // Way Two
+                  var array_count = array1.length;
+                  if(array_count < array2.length){
+                      array_count = array2.length;
+                  }
+                  var res_array = [];
+                  for(var i = 0; i < array_count; i++){
+                    var ind_value = 0;
+                    if(array1[i]){
+                      ind_value = ind_value+parseInt(array1[i]);
+                    }
+                    if(array2[i]){
+                      ind_value = ind_value+parseInt(array2[i]);
+                    }
+                    res_array.push(ind_value);
+                  }
+                  document.write('<br> Result Array is : '+res_array);
+                  document.write("<br><br>Thanks");
+          </script>
+    </body>
+</html>

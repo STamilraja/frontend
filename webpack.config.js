@@ -1,43 +1,81 @@
-const webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack'); //to access built-in plugins
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+// const CssoWebpackPlugin = require('csso-webpack-plugin').default;
+//const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const path = require('path');
 
-module.exports = {
-    entry:  [__dirname+"/client/assets/js/entry.js", __dirname+"/client/assets/scss/importer.scss"],
-    output: {
-        path: __dirname+"/build",
-        filename: "js/bundle.js"
-    },
-    watch:true,
-    module: {
-      rules: [
-        { // regular css files
-          test: /\.css$/,
-          loaders: ExtractTextPlugin.extract({
-            use: 'css-loader?importLoaders=1',
-          }),
-          exclude:__dirname+'/node_modules'
+const config = {
+  entry: {
+    app:'./client/assets/js/index.js',
+    print:'./client/assets/js/print.js',
+  },
+  devtool: 'inline-source-map',
+  // devServer: {
+  //    contentBase: './dist'
+  // },
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'build'),
+    publicPath: '/'
+  },
+  module: {
+    rules: [
+      { test: /\.scss$/,
+        use: [
+          "style-loader?minimize",
+          "css-loader?minimize",
+          "sass-loader?minimize"],
+        // options: {
+        //   autoprefixer: autoprefixer
+        // }
         },
-        { // sass / scss loader for webpack
-          test: /\.scss$/,
-          loaders: ExtractTextPlugin.extract(['css-loader', 'postcss-loader', 'sass-loader']),
-          exclude:__dirname+'/node_modules'
-          // options: {
-          //   resources: [__dirname+'/client/assets/scss/*.scss']
-          // },
-          //test: /\.scss$/, use: 'style!css!sass!sass-resources'
-        }
-      ]
-    },
-    plugins: [
-      new ExtractTextPlugin({ // define where to save the file
-        filename: 'main.bundle.css',
-        allChunks: true,
-      }),
-      new BrowserSyncPlugin({
-        host: 'localhost',
-        port: 7000,
-        server: { baseDir: ['./'] }
-      })
-    ],
+       {
+         test: /\.(png|svg|jpe?g|gif)$/,
+         use: [
+           'file-loader'
+         ]
+       },
+       {
+         test: /\.(woff|woff2|eot|ttf|otf)$/,
+         use: [
+           'file-loader'
+         ]
+       },
+      //  {
+      //    test: /\.html$/,
+      //    use: ['htmlhint-loader','html-minify-loader']
+      //  }
+    ]
+  },
+  plugins: [
+    // new CleanWebpackPlugin(['dist']),
+    new UglifyJSPlugin(),
+    new HtmlWebpackPlugin({  title: 'Webpack', template: 'client/index.html' }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        postcss: [
+          autoprefixer(),
+        ]
+      }
+    }),
+    new CopyWebpackPlugin([{
+      from: 'client/assets/img/',
+      to:'assets/img/'
+    }]),
+    new ImageminPlugin({ test: /\.(png|svg|jpe?g|gif)$/ })
+    // new CssoWebpackPlugin({ pluginOutputPostfix: 'min' }),
+    // new BrowserSyncPlugin({
+    //   host: 'localhost',
+    //   port: 7000,
+    //   server: { baseDir: ['./'] }
+    // })
+  ]
 };
+
+module.exports = config;

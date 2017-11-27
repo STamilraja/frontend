@@ -3,7 +3,7 @@ $f-avenir: 'Avenir';
 @mixin font-family($font) {
     font-family: $font;
 }
-$f-avenir-url-1: url('../fonts/ttf2woff/AvenirLTStd-Roman.otf');
+$f-avenir-url-1: url('../fonts/AvenirLTStd-Roman.otf');
 @mixin font-face($font, $url1) {
     font-family: $font;
     src: $url1 format('woff');

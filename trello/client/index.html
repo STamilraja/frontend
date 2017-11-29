@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <!-- The Modal Form HTML-->
+    <div id="moveModal" class="modal">
+      <div class="modal-content">
+        <div class="card">
+          <div class="card-title">
+              <h3>Move<span class="close" id="0">&times;</span> </h3>
+          </div>
+          <div class="card-content dialog-cont">
+            <form name="move_form" id="move_form" onsubmit="return false;">
+              <div class="dailog-row">
+                  <div class="inp-label">Developer Name</div>
+                  <div><select id="dev_developer_id"><option value="" disabled selected>Please select the developer</option></select></div>
+              </div>
+              <div class="dailog-row">
+                  <input type="hidden" id="dev_task_id" value="0">
+                  <button id="btn_task_move">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="taskModal" class="modal">
+      <div class="modal-content">
+        <div class="card">
+          <div class="card-title">
+              <h3>Task<span class="close" id="1">&times;</span> </h3>
+          </div>
+          <div class="card-content dialog-cont">
+            <form name="task_form" id="task_form" onsubmit="return false;">
+              <div class="dailog-row">
+                  <div class="inp-label">Task Name</div>
+                  <div><input type="text" id="task_name" value="" placeholder="Please enter the task name"></div>
+              </div>
+              <div class="dailog-row">
+                  <div>Task Desc</div>
+                  <div><input type="text" id="task_desc" value="" placeholder="Please enter the task description"></div>
+              </div>
+              <div class="dailog-row">
+                  <div class="inp-label">Developer Name</div>
+                  <div><select id="task_developer_id"><option value="" disabled selected>Please select the developer</option></select></div>
+              </div>
+              <div class="dailog-row">
+                  <div>Comments</div>
+                  <div><textarea id="task_developer_comments" rows="4"></textarea>
+              </div>
+              <div class="dailog-row">
+                  <input type="hidden" id="task_id" value="0">
+                  <button id="btn_task_add">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

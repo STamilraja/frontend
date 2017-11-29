@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <header>
+      <div class="col-6"><img src="./assets/img/logo.png" alt="Logo"></img></div>
+      <div class="col-6 text-right"> Welcome Admin</div>
+    </header>
+    <section>
+      <div class="grid-container">
+        <div class="row">
+          <div class="col-3">
+            <div class="card">
+              <div class="card-title"><h3>Task List</h3></div>
+              <div class="card-content" id="task_div">&nbsp;</div>
+              <div id="add_task" class="card-footer fa fa-plus-circle">&nbsp;</div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <div class="card-title"><h3>In Development</h3></div>
+              <div class="card-content" id="dev_div">&nbsp;</div>
+              <div id="add_dev" class="card-footer fa fa-plus-circle">&nbsp;</div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <div class="card-title"><h3>Q & A</h3></div>
+              <div class="card-content" id="qa_div">&nbsp;</div>
+              <div class="card-footer fa fa-plus-circle">&nbsp;</div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <div class="card-title"><h3>Completed</h3></div>
+              <div class="card-content" id="completed_div">&nbsp;</div>
+              <div class="card-footer fa fa-plus-circle">&nbsp;</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- The Modal -->
+    <div id="taskModal" class="modal">
+      <div class="modal-content">
+        <div class="card">
+          <div class="card-title">
+              <h3>Task<span class="close" id="0">&times;</span> </h3>
+          </div>
+          <div class="card-content dialog-cont">
+            <form name="task_form" id="task_form" onsubmit="return false;">
+              <div class="dailog-row">
+                  <div class="inp-label">Task Name</div>
+                  <div><input type="text" id="task_name" value="" placeholder="Please enter the task name"></div>
+              </div>
+              <div class="dailog-row">
+                  <div>Task Desc</div>
+                  <div><input type="text" id="task_desc" value="" placeholder="Please enter the task description"></div>
+              </div>
+              <div class="dailog-row">
+                  <input type="hidden" id="task_id" value="0">
+                  <button id="btn_task_add">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- The Modal -->
+    <div id="devModal" class="modal">
+      <div class="modal-content">
+        <div class="card">
+          <div class="card-title">
+              <h3>Development Task<span class="close" id="1">&times;</span> </h3>
+          </div>
+          <div class="card-content dialog-cont">
+            <form name="dev_task_form" id="dev_task_form" onsubmit="return false;">
+              <div class="dailog-row">
+                  <div class="inp-label">Developer Name</div>
+                  <div><select id="developer_id"><option value="" disabled selected>Please select the developer</option></select></div>
+              </div>
+              <div class="dailog-row">
+                  <div>Task</div>
+                  <div><select id="developer_task_id"><option value="" disabled selected>Please select the task</option></select></div>
+              </div>
+              <div class="dailog-row">
+                  <div>Comments</div>
+                  <div><textarea id="developer_comments"></textarea>
+              </div>
+              <div class="dailog-row">
+                  <input type="hidden" id="task_id" value="">
+                  <button id="btn_task_add">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script type="text/javascript" src="/app.bundle.js"></script></body>
+</html>

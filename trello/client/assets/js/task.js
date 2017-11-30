@@ -28,7 +28,6 @@ document.getElementById('add_task').onclick = function() {
 // To Open the Task Window
 function edit_form(id, move_flag){
   try{
-    console.log('test');
     // var res_json = localStorage.getItem("task_list");
     // console.log(res_json.developer);
     build_options('task_developer_id', JSON.parse(localStorage.getItem("developer")));
@@ -64,7 +63,6 @@ function edit_form(id, move_flag){
 // To Save the new Task
 document.getElementById('btn_task_add').onclick = function() {
   try{
-    console.log('ok');
     var input_task_name = document.getElementById('task_name').value;
     var input_task_desc = document.getElementById('task_desc').value;
     var input_task_id = document.getElementById('task_id').value;
